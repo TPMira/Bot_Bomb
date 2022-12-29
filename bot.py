@@ -1,10 +1,12 @@
 import pyautogui
 import time
+import os
+
 from datetime import datetime
 from discord_webhook import DiscordWebhook
 from dotenv import load_dotenv
-import os
 from print import shield
+from recuperar_shield import recuperar_shield
 
 load_dotenv()
 
@@ -76,13 +78,16 @@ while True:
         pyautogui.click(menu, duration=0.7)
         time.sleep(2)
 
-    chest = pyautogui.locateOnScreen("chest.png", confidence=0.65)
-    if chest != None:
-        pyautogui.moveTo(chest)
-        pyautogui.click(chest, duration=0.7)
-        time.sleep(2)
+    #chest = pyautogui.locateOnScreen("chest.png", confidence=0.65)
+    #if chest != None:
+        #pyautogui.moveTo(chest)
+        #pyautogui.click(chest)
+        #time.sleep(2)
         
-    shield()
+    #shield()
+    #time.sleep(2)
+
+    recuperar_shield()
     time.sleep(2)
 
     site = pyautogui.locateOnScreen('site.png', confidence=0.8)
